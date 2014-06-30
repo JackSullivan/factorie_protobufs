@@ -10,6 +10,7 @@ import cc.factorie.app.nlp.coref.{DeterministicNamedCoref, ForwardCoref}
 /**
  * @author John Sullivan
  */
+/*
 protected object FSTest {
   object Pipeline{
     val defaultPipeline = Seq(OntonotesForwardPosTagger, DeterministicNamedCoref)
@@ -71,3 +72,4 @@ protected object FSTest {
 
   }
 }
+*/

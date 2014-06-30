@@ -26,8 +26,8 @@ package object factorie_protobufs {
       BILOUOntonotesNERAnnotation,
       BIOConllNERAnnotation,
       BIOOntonotesNERAnnotation),
-    Vector(SentenceAnnotation,
-      SectionAnnotation,
+    Vector(SectionAnnotation,
+      SentenceAnnotation,
       CorefAnnotation,
       RelationAnnotation))
 

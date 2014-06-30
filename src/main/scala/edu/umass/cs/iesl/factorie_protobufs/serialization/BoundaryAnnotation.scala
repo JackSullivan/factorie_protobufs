@@ -15,18 +15,23 @@ object SentenceAnnotation extends BoundaryAnnotation {
   val annotation = classOf[Sentence].getName
 
   def deserialize(ser: ProtoCompoundGroup, un: Document) = {
-    ser.getCompound(0).getSlotList.asScala.foreach { sSlot =>
-      new Sentence(un.asSection, sSlot.getStartToken, sSlot.getEndToken - sSlot.getStartToken) // factorie side-effects!
+    assert(un.sections.size == ser.getCompoundCount)
+    un.sections.zip(ser.getCompoundList.asScala).foreach { case(fSection, sComp) =>
+      sComp.getSlotList.asScala.foreach { sSlot =>
+        new Sentence(fSection, sSlot.getStartToken, sSlot.getEndToken - sSlot.getStartToken) // factorie side-effects!
+      }
     }
     un
   }
 
-  override def serialize(un:Document) = protoCompoundGroup.mergeFrom(methodAnno).addCompound{
-    protoCompound.addAllSlot{
-      un.sentences.map { fSentence =>
-        protoSlot.setStartToken(fSentence.start).setEndToken(fSentence.end).build()
-      }.asJava
-    }.build()
+  override def serialize(un:Document) = protoCompoundGroup.mergeFrom(methodAnno).addAllCompound{
+    un.sections.map{ fSection =>
+      protoCompound.addAllSlot{
+        fSection.sentences.map { fSentence =>
+          protoSlot.setStartToken(fSentence.start).setEndToken(fSentence.end).build()
+        }.asJava
+      }.build()
+    }.asJava
   }.build()
 }
 
