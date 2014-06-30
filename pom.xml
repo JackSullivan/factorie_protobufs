@@ -58,6 +58,11 @@
         <artifactId>factorie</artifactId>
         <version>1.1-TAC-SNAPSHOT</version>
     </dependency>
+      <dependency>
+          <groupId>edu.umass.cs.iesl</groupId>
+          <artifactId>tackbp2014</artifactId>
+          <version>0.1-SNAPSHOT</version>
+      </dependency>
       <!--
       <dependency>
           <groupId>cc.factorie.app.nlp</groupId>
@@ -65,6 +70,12 @@
           <version>1.0-SNAPSHOT</version>
       </dependency>
       -->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.11</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
 
     <distributionManagement>
@@ -89,6 +100,7 @@
 
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
+      <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.scala-tools</groupId>
