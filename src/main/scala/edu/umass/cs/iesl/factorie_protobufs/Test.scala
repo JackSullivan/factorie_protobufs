@@ -10,10 +10,13 @@ import java.io.{FileWriter, BufferedWriter}
  */
 object Test {
   val dataDirs = Seq(
-    "/Users/johnsullivan/data/tackbp2014/data/LDC2014E20_TAC_2014_KBP_Event_Argument_Extraction_Pilot_Source_Corpus_V1.1/data/df",
-    "/Users/johnsullivan/data/tackbp2014/data/LDC2014E20_TAC_2014_KBP_Event_Argument_Extraction_Pilot_Source_Corpus_V1.1/data/nw")
+    "/iesl/canvas/proj/tackbp2014/data/LDC2014E20_TAC_2014_KBP_Event_Argument_Extraction_Pilot_Source_Corpus_V1.1/data/df",
+    "/iesl/canvas/proj/tackbp2014/data/LDC2014E20_TAC_2014_KBP_Event_Argument_Extraction_Pilot_Source_Corpus_V1.1/data/nw")
+//    "/Users/johnsullivan/data/tackbp2014/data/LDC2014E20_TAC_2014_KBP_Event_Argument_Extraction_Pilot_Source_Corpus_V1.1/data/df",
+//    "/Users/johnsullivan/data/tackbp2014/data/LDC2014E20_TAC_2014_KBP_Event_Argument_Extraction_Pilot_Source_Corpus_V1.1/data/nw")
 
-  val writeDir = "/Users/johnsullivan/dev/fac-reader/test-out"
+  //val writeDir = "/Users/johnsullivan/dev/fac-reader/test-out"
+  val writeDir = "/iesl/canvas/sullivan/dev/factorie_protobufs/test-out"
 
 
   def main(args:Array[String]) {

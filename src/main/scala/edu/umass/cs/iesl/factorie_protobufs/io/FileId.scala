@@ -12,7 +12,7 @@ case class FileId(service:String, date:String, id:String) {
 }
 
 object FileId {
-  private val DocRegex = """([\w_]+)_(\d{8})_(.+)""".r
+  private val DocRegex = """([\w_-]+)[-_](\d[\d\w]+)[-_](.+)""".r
 
   def apply(file:File):FileId = {
     val idString = file.getName.replaceFirst("[.][^.]+$", "").replaceAll("""\.""","_")

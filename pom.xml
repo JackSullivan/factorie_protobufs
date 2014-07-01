@@ -112,6 +112,20 @@
                     </goals>
                 </execution>
             </executions>
+            <configuration>
+              <launchers>
+                <launcher>
+                  <id>test</id>
+                  <mainClass>edu.umass.cs.iesl.factorie_protobufs.Test</mainClass>
+                  <!-- args are optional -->
+                  <!-- jvmArgs are optional -->
+                  <jvmArgs>
+                    <jvmArg>-Xmx4g</jvmArg>
+                  </jvmArgs>
+                </launcher>
+                <!-- you could define other launcher -->
+              </launchers>
+            </configuration>
         </plugin>
     </plugins>
       <pluginManagement>

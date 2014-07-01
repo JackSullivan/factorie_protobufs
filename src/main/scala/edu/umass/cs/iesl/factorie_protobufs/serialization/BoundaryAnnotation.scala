@@ -15,7 +15,7 @@ object SentenceAnnotation extends BoundaryAnnotation {
   val annotation = classOf[Sentence].getName
 
   def deserialize(ser: ProtoCompoundGroup, un: Document) = {
-    assert(un.sections.size == ser.getCompoundCount)
+    assert(un.sections.size == ser.getCompoundCount, "Expected the same number of sections and compounds, instead found %d sections and %d compounds.".format(un.sections.size, ser.getCompoundCount))
     un.sections.zip(ser.getCompoundList.asScala).foreach { case(fSection, sComp) =>
       sComp.getSlotList.asScala.foreach { sSlot =>
         new Sentence(fSection, sSlot.getStartToken, sSlot.getEndToken - sSlot.getStartToken) // factorie side-effects!
